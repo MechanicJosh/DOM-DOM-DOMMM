@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 let currentId = Number(squares[i].id);
                 
                 // Check if the current square is the selected square
-                if (currentId === (newSquareId)) {
+                if ((currentId === newSquareId) && currentId % 2 == 0 ) {
                     // Check if there is a square after the selected square
                     if (i + 1 < squares.length) {
                         // Remove the square after the selected square
@@ -67,6 +67,14 @@ document.addEventListener('DOMContentLoaded', function(){
                         alert("There is no square after the selected square.");
                     }
                     break; // Exit the loop once the operation is complete
+                }
+                if ((currentId == newSquareId) && currentId % 2 !== 0){
+                    if ((i-1 >= 0)){
+                        squares[i - 1].remove();
+                    }
+                    else{
+                        alert("there is no square before the selected square");
+                    }
                 }
         }
     }
